@@ -7,14 +7,14 @@
 @property (nonatomic, strong) SKNode *touchedNode;
 @property (nonatomic , assign) BOOL contentCreated;
 @property (nonatomic, assign) BOOL stable;
-@property (nonatomic, assign) NSUInteger nodesCount;
-
 @property (nonatomic, strong) NSMutableArray *mutableEdges;
 
 @end
 
 
 @implementation DLGraphScene
+
+#pragma mark - SKScene
 
 - (instancetype)initWithSize:(CGSize)size
 {
@@ -23,7 +23,7 @@
         _vertices = [NSMutableDictionary dictionary];
         _mutableEdges = [NSMutableArray array];
 
-        _repulsion = 800.f;
+        _repulsion = 600.f;
         _attraction = 0.1f;
     }
 
@@ -32,98 +32,28 @@
 
 - (void)didMoveToView:(SKView *)view
 {
-    if (!self.contentCreated)
+    if (self.contentCreated == NO)
     {
         [self createSceneContents];
         self.contentCreated = YES;
     }
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [self addEdge:@[@0, @4]];
-//    });
 }
 
-- (void)createSceneContents
+- (void)didSimulatePhysics
 {
-    self.backgroundColor = [SKColor blueColor];
-    self.physicsWorld.gravity = CGVectorMake(0,0);
-}
-
-- (void)didChangeSize:(CGSize)oldSize {
-    [super didChangeSize:oldSize];
-    self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
-}
-
-- (NSArray *)edges
-{
-    return [self.mutableEdges copy];
-}
-
-- (void)addEdge:(NSArray *)edge
-{
-    [self.mutableEdges addObject:edge];
-
-    [self createVerticesForEdge:edge];
-    [self createConnectionFroEdge:edge];
-}
-
-- (void)addEdges:(NSArray *)edges
-{
-    for (NSArray *edge in edges) {
-        [self addEdge:edge];
-    }
-}
-
-- (void)removeEdge:(NSArray *)edge
-{
-
-}
-
-- (void)removeEdges:(NSArray *)edges
-{
-
-}
-
-- (void)createConnectionFroEdge:(NSArray *)edge
-{
-    SKShapeNode *connection = [SKShapeNode node];
-    connection.strokeColor = [UIColor redColor];
-    connection.fillColor = [UIColor redColor];
-    connection.lineWidth = 3.f;
-
-    [self addChild:connection];
-    self.connections[edge] = connection;
-}
-
-- (void)createVerticesForEdge:(NSArray *)edge
-{
-    [self createVertexIfNeeded:edge.firstObject];
-    [self createVertexIfNeeded:edge.lastObject];
-}
-
-- (void)createVertexIfNeeded:(NSNumber *)index
-{
-    if (self.vertices[index] == nil) {
-        [self createVertexWithIndex:index];
-    }
-}
-
-- (void)createVertexWithIndex:(NSNumber *)index
-{
-    SKShapeNode *circle = [self newCircleWithIndex:index.unsignedIntegerValue];
-    circle.position = CGPointMake(arc4random() % (NSUInteger)self.size.width,
-                                  arc4random() % (NSUInteger)self.size.height);
-    [self addChild:circle];
-    self.vertices[index] = circle;
-}
-
-- (NSUInteger)calculateNodesCount
-{
-    NSUInteger nodesCount = 0;
-    for (NSArray *edge in self.edges) {
-        nodesCount = MAX(MAX([edge[0] integerValue], [edge[1] integerValue]), nodesCount) ;
-    }
-
-    return ++nodesCount;
+    //нужно как то давать системе разогнаться
+//    CGFloat xVelocity = 0.f;
+//    CGFloat yVelocity = 0.f;
+//
+//    for (SKShapeNode *vertice in self.vertices) {
+//        xVelocity += vertice.physicsBody.velocity.dx;
+//        yVelocity += vertice.physicsBody.velocity.dy;
+//    }
+//
+//    NSLog(@"%.3f, %.3f", xVelocity, yVelocity);
+//    if (ABS(xVelocity) < 0.01 && ABS((yVelocity) < 0.01)) {
+//        self.stable = YES;
+//    }
 }
 
 - (void)update:(NSTimeInterval)currentTime
@@ -173,6 +103,85 @@
     [self updateConnections];
 }
 
+- (void)didChangeSize:(CGSize)oldSize
+{
+    [super didChangeSize:oldSize];
+    self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+}
+
+#pragma mark - Public
+
+- (NSArray *)edges
+{
+    return [self.mutableEdges copy];
+}
+
+- (void)addEdge:(NSArray *)edge
+{
+    [self.mutableEdges addObject:edge];
+
+    [self createVerticesForEdge:edge];
+    [self createConnectionForEdge:edge];
+}
+
+- (void)addEdges:(NSArray *)edges
+{
+    for (NSArray *edge in edges) {
+        [self addEdge:edge];
+    }
+}
+
+- (void)removeEdge:(NSArray *)edge
+{
+
+}
+
+- (void)removeEdges:(NSArray *)edges
+{
+
+}
+
+#pragma mark - Private
+
+- (void)createVertexWithIndex:(NSNumber *)index
+{
+    SKShapeNode *circle = [self newCircleWithIndex:index.unsignedIntegerValue];
+    circle.position = CGPointMake(arc4random() % (NSUInteger)self.size.width,
+                                  arc4random() % (NSUInteger)self.size.height);
+    [self addChild:circle];
+    self.vertices[index] = circle;
+}
+
+- (void)createConnectionForEdge:(NSArray *)edge
+{
+    SKShapeNode *connection = [SKShapeNode node];
+    connection.strokeColor = [UIColor redColor];
+    connection.fillColor = [UIColor redColor];
+    connection.lineWidth = 3.f;
+
+    [self addChild:connection];
+    self.connections[edge] = connection;
+}
+
+- (void)createVerticesForEdge:(NSArray *)edge
+{
+    [self createVertexIfNeeded:edge.firstObject];
+    [self createVertexIfNeeded:edge.lastObject];
+}
+
+- (void)createVertexIfNeeded:(NSNumber *)index
+{
+    if (self.vertices[index] == nil) {
+        [self createVertexWithIndex:index];
+    }
+}
+
+- (void)createSceneContents
+{
+    self.backgroundColor = [SKColor blueColor];
+    self.physicsWorld.gravity = CGVectorMake(0,0);
+}
+
 - (void)updateConnections
 {
     [self.connections enumerateKeysAndObjectsUsingBlock:^(NSArray *key, SKShapeNode *connection, BOOL *stop) {
@@ -199,30 +208,13 @@
     return NO;
 }
 
-- (void)didSimulatePhysics
-{
-    //нужно как то давать системе разогнаться
-//    CGFloat xVelocity = 0.f;
-//    CGFloat yVelocity = 0.f;
-//
-//    for (SKShapeNode *vertice in self.vertices) {
-//        xVelocity += vertice.physicsBody.velocity.dx;
-//        yVelocity += vertice.physicsBody.velocity.dy;
-//    }
-//
-//    NSLog(@"%.3f, %.3f", xVelocity, yVelocity);
-//    if (ABS(xVelocity) < 0.01 && ABS((yVelocity) < 0.01)) {
-//        self.stable = YES;
-//    }
-}
-
 - (SKShapeNode *)newCircleWithIndex:(NSInteger)index {
 #warning shape node ликуют - проверить.
     SKShapeNode *node = [SKShapeNode node];
     node.zPosition = 10;
     node.physicsBody.allowsRotation = NO;
     node.name = @"circle";
-    CGFloat diameter = 80;
+    CGFloat diameter = 40;
     [node setPath:CGPathCreateWithEllipseInRect(CGRectMake(-diameter /2, -diameter / 2, diameter, diameter), nil)];
     node.strokeColor = node.fillColor = [SKColor greenColor];
     node.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:diameter / 2];
@@ -234,6 +226,7 @@
     return node;
 }
 
+#pragma mark - Touch handling
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
