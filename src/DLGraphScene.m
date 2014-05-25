@@ -21,7 +21,7 @@
 {
     if (self = [super initWithSize:size]) {
         _connections = [NSMutableDictionary dictionary];
-        _vertices = [NSMutableDictionary dictionary];
+        _vertexes = [NSMutableDictionary dictionary];
         _mutableEdges = [NSMutableArray array];
 
         _repulsion = 600.f;
@@ -46,7 +46,7 @@
 //    CGFloat xVelocity = 0.f;
 //    CGFloat yVelocity = 0.f;
 //
-//    for (SKShapeNode *vertice in self.vertices) {
+//    for (SKShapeNode *vertice in self.vertexes) {
 //        xVelocity += vertice.physicsBody.velocity.dx;
 //        yVelocity += vertice.physicsBody.velocity.dy;
 //    }
@@ -63,10 +63,10 @@
         return;
     }
 
-    NSUInteger n = self.vertices.count;
+    NSUInteger n = self.vertexes.count;
 
     for  (NSUInteger i = 0; i < n; i++) {
-        SKShapeNode *v = self.vertices[@(i)];
+        SKShapeNode *v = self.vertexes[@(i)];
         SKSpriteNode *u;
 
         CGFloat vForceX = 0;
@@ -75,7 +75,7 @@
         for (NSUInteger j = 0; j < n; j++) {
             if (i == j) continue;
 
-            u = self.vertices[@(j)];
+            u = self.vertexes[@(j)];
 
             double rsq = pow((v.position.x - u.position.x), 2) + pow((v.position.y - u.position.y), 2);
             vForceX += self.repulsion * (v.position.x - u.position.x) / rsq;
@@ -85,7 +85,7 @@
         for (NSUInteger j = 0; j < n; j++) {
             if(![self hasConnectedA:i toB:j]) continue;
 
-            u = self.vertices[@(j)];;
+            u = self.vertexes[@(j)];;
 
             vForceX += self.attraction * (u.position.x - v.position.x);
             vForceY += self.attraction * (u.position.y - v.position.y);
@@ -119,7 +119,7 @@
 {
     [self.mutableEdges addObject:edge];
 
-    [self createVerticesForEdge:edge];
+    [self createVertexesForEdge:edge];
     [self createConnectionForEdge:edge];
 }
 
@@ -153,10 +153,9 @@
     SKShapeNode *circle = [self createVertexNode];
     [self.delegate configureVertex:circle atIndex:index];
 
-    circle.position = CGPointMake(arc4random() % (NSUInteger)self.size.width,
-                                  arc4random() % (NSUInteger)self.size.height);
+    circle.position = CGPointMake(self.size.width / 2, self.size.height / 2);
     [self addChild:circle];
-    self.vertices[@(index)] = circle;
+    self.vertexes[@(index)] = circle;
 }
 
 - (void)createConnectionForEdge:(DLEdge *)edge
@@ -170,7 +169,7 @@
     self.connections[edge] = connection;
 }
 
-- (void)createVerticesForEdge:(DLEdge *)edge
+- (void)createVertexesForEdge:(DLEdge *)edge
 {
     [self createVertexIfNeeded:edge.i];
     [self createVertexIfNeeded:edge.j];
@@ -178,7 +177,7 @@
 
 - (void)createVertexIfNeeded:(NSUInteger)index
 {
-    if (self.vertices[@(index)] == nil) {
+    if (self.vertexes[@(index)] == nil) {
         [self createVertexWithIndex:index];
     }
 }
@@ -194,8 +193,8 @@
     [self.connections enumerateKeysAndObjectsUsingBlock:^(DLEdge *key, SKShapeNode *connection, BOOL *stop) {
         CGMutablePathRef pathToDraw = CGPathCreateMutable();
 
-        SKNode *vertexA = self.vertices[@(key.i)];
-        SKNode *vertexB = self.vertices[@(key.j)];
+        SKNode *vertexA = self.vertexes[@(key.i)];
+        SKNode *vertexB = self.vertexes[@(key.j)];
 
         CGPathMoveToPoint(pathToDraw, NULL, vertexA.position.x, vertexA.position.y);
         CGPathAddLineToPoint(pathToDraw, NULL, vertexB.position.x, vertexB.position.y);

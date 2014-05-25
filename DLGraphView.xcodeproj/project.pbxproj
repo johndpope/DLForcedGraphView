@@ -18,12 +18,14 @@
 		2EF5D95E1931CE350003045A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EF5D9431931CE350003045A /* Foundation.framework */; };
 		2EF5D95F1931CE350003045A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EF5D9471931CE350003045A /* UIKit.framework */; };
 		2EF5D9671931CE350003045A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2EF5D9651931CE350003045A /* InfoPlist.strings */; };
-		2EF5D9691931CE350003045A /* DLGraphViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF5D9681931CE350003045A /* DLGraphViewTests.m */; };
+		2EF5D97219325F890003045A /* DLEdgeSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDCF0FD49B28E3DF73CC77 /* DLEdgeSpec.m */; };
+		2EF5D97319325F890003045A /* DLGraphSceneSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDCB4A92B576632F75DC1C /* DLGraphSceneSpec.m */; };
 		5ECDC19DB49C664837B181F7 /* DLGraphDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ECDCC65D631281B1E26B178 /* DLGraphDemoViewController.xib */; };
 		5ECDC4BD8A0852D002734202 /* DLGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDCDD9350EF5767B2F6345 /* DLGraphView.m */; };
 		5ECDC86E61659DCEB858020A /* DLGraphDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDC75D876ED86A9EBADFE8 /* DLGraphDemoViewController.m */; };
 		5ECDC894C8874E9A07080E3C /* DLEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDC386434A911F7FFEE129 /* DLEdge.m */; };
 		5ECDC9C166B79BF6CB6F5F72 /* DLGraphScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDC4CC29F7899360E09D4B /* DLGraphScene.m */; };
+		8359B17048784E8E9E98B5E5 /* libPods-DLGraphViewTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7C4BB9FCD114BC3B9C7013D /* libPods-DLGraphViewTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +54,6 @@
 		2EF5D95C1931CE350003045A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2EF5D9641931CE350003045A /* DLGraphViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DLGraphViewTests-Info.plist"; sourceTree = "<group>"; };
 		2EF5D9661931CE350003045A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2EF5D9681931CE350003045A /* DLGraphViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLGraphViewTests.m; sourceTree = "<group>"; };
 		5ECDC0DE5E6A94C9D03E8770 /* DLGraphScene+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DLGraphScene+Private.h"; sourceTree = "<group>"; };
 		5ECDC2A6C403040CF7B8E38C /* DLGraphDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLGraphDemoViewController.h; sourceTree = "<group>"; };
 		5ECDC386434A911F7FFEE129 /* DLEdge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLEdge.m; sourceTree = "<group>"; };
@@ -60,9 +61,13 @@
 		5ECDC59C00E7D4C286C3905F /* DLGraphScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLGraphScene.h; sourceTree = "<group>"; };
 		5ECDC75D876ED86A9EBADFE8 /* DLGraphDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLGraphDemoViewController.m; sourceTree = "<group>"; };
 		5ECDC89B28D4D8AE1B504CEA /* DLEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLEdge.h; sourceTree = "<group>"; };
+		5ECDCB4A92B576632F75DC1C /* DLGraphSceneSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLGraphSceneSpec.m; sourceTree = "<group>"; };
 		5ECDCC65D631281B1E26B178 /* DLGraphDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DLGraphDemoViewController.xib; sourceTree = "<group>"; };
 		5ECDCD3C07DC92F37A92B9CF /* DLGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLGraphView.h; sourceTree = "<group>"; };
 		5ECDCDD9350EF5767B2F6345 /* DLGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLGraphView.m; sourceTree = "<group>"; };
+		5ECDCF0FD49B28E3DF73CC77 /* DLEdgeSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLEdgeSpec.m; sourceTree = "<group>"; };
+		B1F7E87C4B204ABA9AE88690 /* Pods-DLGraphViewTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DLGraphViewTests.xcconfig"; path = "Pods/Pods-DLGraphViewTests.xcconfig"; sourceTree = "<group>"; };
+		E7C4BB9FCD114BC3B9C7013D /* libPods-DLGraphViewTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DLGraphViewTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +88,7 @@
 				2EF5D95D1931CE350003045A /* XCTest.framework in Frameworks */,
 				2EF5D95F1931CE350003045A /* UIKit.framework in Frameworks */,
 				2EF5D95E1931CE350003045A /* Foundation.framework in Frameworks */,
+				8359B17048784E8E9E98B5E5 /* libPods-DLGraphViewTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +103,8 @@
 				2EF5D9421931CE350003045A /* Frameworks */,
 				2EF5D9411931CE350003045A /* Products */,
 				5ECDCD34D3DADB6D0417DECF /* src */,
+				B1F7E87C4B204ABA9AE88690 /* Pods-DLGraphViewTests.xcconfig */,
+				5ECDC33DB42EAD01C7CE4391 /* spec */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,6 +124,7 @@
 				2EF5D9451931CE350003045A /* CoreGraphics.framework */,
 				2EF5D9471931CE350003045A /* UIKit.framework */,
 				2EF5D95C1931CE350003045A /* XCTest.framework */,
+				E7C4BB9FCD114BC3B9C7013D /* libPods-DLGraphViewTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -148,7 +157,6 @@
 		2EF5D9621931CE350003045A /* DLGraphViewTests */ = {
 			isa = PBXGroup;
 			children = (
-				2EF5D9681931CE350003045A /* DLGraphViewTests.m */,
 				2EF5D9631931CE350003045A /* Supporting Files */,
 			);
 			path = DLGraphViewTests;
@@ -161,6 +169,15 @@
 				2EF5D9651931CE350003045A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5ECDC33DB42EAD01C7CE4391 /* spec */ = {
+			isa = PBXGroup;
+			children = (
+				5ECDCF0FD49B28E3DF73CC77 /* DLEdgeSpec.m */,
+				5ECDCB4A92B576632F75DC1C /* DLGraphSceneSpec.m */,
+			);
+			path = spec;
 			sourceTree = "<group>";
 		};
 		5ECDCD34D3DADB6D0417DECF /* src */ = {
@@ -201,9 +218,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2EF5D96F1931CE350003045A /* Build configuration list for PBXNativeTarget "DLGraphViewTests" */;
 			buildPhases = (
+				F01858848C2D4012BAF6A6DB /* Check Pods Manifest.lock */,
 				2EF5D9571931CE350003045A /* Sources */,
 				2EF5D9581931CE350003045A /* Frameworks */,
 				2EF5D9591931CE350003045A /* Resources */,
+				091E2C68D11F4E29BEF0C297 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -269,6 +288,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		091E2C68D11F4E29BEF0C297 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-DLGraphViewTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F01858848C2D4012BAF6A6DB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2EF5D93C1931CE350003045A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -287,7 +339,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EF5D9691931CE350003045A /* DLGraphViewTests.m in Sources */,
+				2EF5D97319325F890003045A /* DLGraphSceneSpec.m in Sources */,
+				2EF5D97219325F890003045A /* DLEdgeSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +455,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -417,12 +471,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
 		2EF5D9701931CE350003045A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1F7E87C4B204ABA9AE88690 /* Pods-DLGraphViewTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DLGraphView.app/DLGraphView";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -445,6 +501,7 @@
 		};
 		2EF5D9711931CE350003045A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1F7E87C4B204ABA9AE88690 /* Pods-DLGraphViewTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DLGraphView.app/DLGraphView";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -480,6 +537,7 @@
 				2EF5D96E1931CE350003045A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2EF5D96F1931CE350003045A /* Build configuration list for PBXNativeTarget "DLGraphViewTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +546,7 @@
 				2EF5D9711931CE350003045A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
