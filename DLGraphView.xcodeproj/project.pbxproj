@@ -22,6 +22,7 @@
 		5ECDC19DB49C664837B181F7 /* DLGraphDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ECDCC65D631281B1E26B178 /* DLGraphDemoViewController.xib */; };
 		5ECDC4BD8A0852D002734202 /* DLGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDCDD9350EF5767B2F6345 /* DLGraphView.m */; };
 		5ECDC86E61659DCEB858020A /* DLGraphDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDC75D876ED86A9EBADFE8 /* DLGraphDemoViewController.m */; };
+		5ECDC894C8874E9A07080E3C /* DLEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDC386434A911F7FFEE129 /* DLEdge.m */; };
 		5ECDC9C166B79BF6CB6F5F72 /* DLGraphScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDC4CC29F7899360E09D4B /* DLGraphScene.m */; };
 /* End PBXBuildFile section */
 
@@ -54,9 +55,11 @@
 		2EF5D9681931CE350003045A /* DLGraphViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLGraphViewTests.m; sourceTree = "<group>"; };
 		5ECDC0DE5E6A94C9D03E8770 /* DLGraphScene+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DLGraphScene+Private.h"; sourceTree = "<group>"; };
 		5ECDC2A6C403040CF7B8E38C /* DLGraphDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLGraphDemoViewController.h; sourceTree = "<group>"; };
+		5ECDC386434A911F7FFEE129 /* DLEdge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLEdge.m; sourceTree = "<group>"; };
 		5ECDC4CC29F7899360E09D4B /* DLGraphScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLGraphScene.m; sourceTree = "<group>"; };
 		5ECDC59C00E7D4C286C3905F /* DLGraphScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLGraphScene.h; sourceTree = "<group>"; };
 		5ECDC75D876ED86A9EBADFE8 /* DLGraphDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLGraphDemoViewController.m; sourceTree = "<group>"; };
+		5ECDC89B28D4D8AE1B504CEA /* DLEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLEdge.h; sourceTree = "<group>"; };
 		5ECDCC65D631281B1E26B178 /* DLGraphDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DLGraphDemoViewController.xib; sourceTree = "<group>"; };
 		5ECDCD3C07DC92F37A92B9CF /* DLGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLGraphView.h; sourceTree = "<group>"; };
 		5ECDCDD9350EF5767B2F6345 /* DLGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLGraphView.m; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 				5ECDC0DE5E6A94C9D03E8770 /* DLGraphScene+Private.h */,
 				5ECDCD3C07DC92F37A92B9CF /* DLGraphView.h */,
 				5ECDCDD9350EF5767B2F6345 /* DLGraphView.m */,
+				5ECDC386434A911F7FFEE129 /* DLEdge.m */,
+				5ECDC89B28D4D8AE1B504CEA /* DLEdge.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 				5ECDC86E61659DCEB858020A /* DLGraphDemoViewController.m in Sources */,
 				5ECDC9C166B79BF6CB6F5F72 /* DLGraphScene.m in Sources */,
 				5ECDC4BD8A0852D002734202 /* DLGraphView.m in Sources */,
+				5ECDC894C8874E9A07080E3C /* DLEdge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

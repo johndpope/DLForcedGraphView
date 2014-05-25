@@ -1,3 +1,6 @@
+@class DLEdge;
+
+
 @protocol DLGraphSceneDelegate <NSObject>
 
 - (void)configureVertex:(SKShapeNode *)vertex atIndex:(NSUInteger)index;
@@ -11,9 +14,9 @@
 @property (nonatomic, assign) CGFloat attraction;
 @property (nonatomic, weak) id<DLGraphSceneDelegate> delegate;
 
-- (void)addEdge:(NSArray *)edge;
+- (void)addEdge:(DLEdge *)edge;
 - (void)addEdges:(NSArray *)edges;
-- (void)removeEdge:(NSArray *)edge;
+- (void)removeEdge:(DLEdge *)edge;
 - (void)removeEdges:(NSArray *)edges;
 
 @end

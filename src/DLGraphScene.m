@@ -1,5 +1,6 @@
 #import "DLGraphScene.h"
 #import "DLGraphScene+Private.h"
+#import "DLEdge.h"
 
 
 @interface DLGraphScene ()
@@ -114,7 +115,7 @@
     return [self.mutableEdges copy];
 }
 
-- (void)addEdge:(NSArray *)edge
+- (void)addEdge:(DLEdge *)edge
 {
     [self.mutableEdges addObject:edge];
 
@@ -124,12 +125,12 @@
 
 - (void)addEdges:(NSArray *)edges
 {
-    for (NSArray *edge in edges) {
+    for (DLEdge *edge in edges) {
         [self addEdge:edge];
     }
 }
 
-- (void)removeEdge:(NSArray *)edge
+- (void)removeEdge:(DLEdge *)edge
 {
     [self.mutableEdges removeObject:edge];
 
@@ -140,25 +141,25 @@
 
 - (void)removeEdges:(NSArray *)edges
 {
-    for (NSArray *edge in edges) {
+    for (DLEdge *edge in edges) {
         [self removeEdge:edge];
     }
 }
 
 #pragma mark - Private
 
-- (void)createVertexWithIndex:(NSNumber *)index
+- (void)createVertexWithIndex:(NSUInteger)index
 {
     SKShapeNode *circle = [self createVertexNode];
-    [self.delegate configureVertex:circle atIndex:index.unsignedIntegerValue];
+    [self.delegate configureVertex:circle atIndex:index];
 
     circle.position = CGPointMake(arc4random() % (NSUInteger)self.size.width,
                                   arc4random() % (NSUInteger)self.size.height);
     [self addChild:circle];
-    self.vertices[index] = circle;
+    self.vertices[@(index)] = circle;
 }
 
-- (void)createConnectionForEdge:(NSArray *)edge
+- (void)createConnectionForEdge:(DLEdge *)edge
 {
     SKShapeNode *connection = [SKShapeNode node];
     connection.strokeColor = [UIColor redColor];
@@ -169,15 +170,15 @@
     self.connections[edge] = connection;
 }
 
-- (void)createVerticesForEdge:(NSArray *)edge
+- (void)createVerticesForEdge:(DLEdge *)edge
 {
-    [self createVertexIfNeeded:edge.firstObject];
-    [self createVertexIfNeeded:edge.lastObject];
+    [self createVertexIfNeeded:edge.i];
+    [self createVertexIfNeeded:edge.j];
 }
 
-- (void)createVertexIfNeeded:(NSNumber *)index
+- (void)createVertexIfNeeded:(NSUInteger)index
 {
-    if (self.vertices[index] == nil) {
+    if (self.vertices[@(index)] == nil) {
         [self createVertexWithIndex:index];
     }
 }
@@ -190,11 +191,11 @@
 
 - (void)updateConnections
 {
-    [self.connections enumerateKeysAndObjectsUsingBlock:^(NSArray *key, SKShapeNode *connection, BOOL *stop) {
+    [self.connections enumerateKeysAndObjectsUsingBlock:^(DLEdge *key, SKShapeNode *connection, BOOL *stop) {
         CGMutablePathRef pathToDraw = CGPathCreateMutable();
 
-        SKNode *vertexA = self.vertices[key.firstObject];
-        SKNode *vertexB = self.vertices[key.lastObject];
+        SKNode *vertexA = self.vertices[@(key.i)];
+        SKNode *vertexB = self.vertices[@(key.j)];
 
         CGPathMoveToPoint(pathToDraw, NULL, vertexA.position.x, vertexA.position.y);
         CGPathAddLineToPoint(pathToDraw, NULL, vertexB.position.x, vertexB.position.y);
@@ -204,8 +205,7 @@
 
 - (BOOL)hasConnectedA:(NSUInteger)a toB:(NSUInteger)b
 {
-    return  [self.edges containsObject:@[@(a), @(b)]] ||
-            [self.edges containsObject:@[@(b), @(a)]];
+    return  [self.edges containsObject:DLMakeEdge(a, b)];
 }
 
 - (SKShapeNode *)createVertexNode {

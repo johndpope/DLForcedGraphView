@@ -1,5 +1,6 @@
 #import "DLGraphDemoViewController.h"
 #import "DLGraphView.h"
+#import "DLEdge.h"
 
 @interface DLGraphDemoViewController () <DLGraphSceneDelegate>
 
@@ -19,26 +20,17 @@
     DLGraphScene *scene = self.graphView.graphScene;
     scene.delegate = self;
 
-//    NSArray *edges =  @[
-//        @[@0, @1],
-//        @[@1, @2],
-//        @[@2, @3],
-//        @[@3, @4],
-//        @[@4, @5],
-//        @[@5, @0]
-//    ];
-
     NSArray *edges = @[
-        @[@0, @1],
-        @[@1, @2],
-        @[@2, @3],
-        @[@0, @3]
+        DLMakeEdge(0, 1),
+        DLMakeEdge(1, 2),
+        DLMakeEdge(2, 3),
+        DLMakeEdge(3, 0)
     ];
 
     [scene addEdges:edges];
 
-    [scene performSelector:@selector(removeEdge:) withObject:@[@0,@1] afterDelay:4.0];
-    [scene performSelector:@selector(addEdge:) withObject:@[@0,@1] afterDelay:7.0];
+    [scene performSelector:@selector(removeEdge:) withObject:DLMakeEdge(0, 1) afterDelay:4.0];
+    [scene performSelector:@selector(addEdge:) withObject:DLMakeEdge(0, 1) afterDelay:7.0];
 }
 
 - (void)showDebugInfo
