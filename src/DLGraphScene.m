@@ -153,7 +153,11 @@
     SKShapeNode *circle = [self createVertexNode];
     [self.delegate configureVertex:circle atIndex:index];
 
-    circle.position = CGPointMake(self.size.width / 2, self.size.height / 2);
+    NSInteger maxWidth = (NSInteger)(self.size.width ?: 1);
+    NSInteger maxHeight = (NSInteger)(self.size.height ?: 1);
+
+    circle.position = CGPointMake(arc4random() % maxWidth, arc4random() % maxHeight);
+
     [self addChild:circle];
     self.vertexes[@(index)] = circle;
 }
