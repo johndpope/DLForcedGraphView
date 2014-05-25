@@ -9,6 +9,8 @@
 @property (nonatomic, assign) BOOL stable;
 @property (nonatomic, assign) NSUInteger nodesCount;
 
+@property (nonatomic, strong) NSMutableArray *mutableEdges;
+
 @end
 
 
@@ -17,8 +19,9 @@
 - (instancetype)initWithSize:(CGSize)size
 {
     if (self = [super initWithSize:size]) {
-        _lines = [NSMutableArray array];
-        _vertices = [NSMutableArray array];
+        _connections = [NSMutableDictionary dictionary];
+        _vertices = [NSMutableDictionary dictionary];
+        _mutableEdges = [NSMutableArray array];
 
         _repulsion = 800.f;
         _attraction = 0.1f;
@@ -50,33 +53,24 @@
     self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
 }
 
-- (void)setEdges:(NSArray *)edges
+- (NSArray *)edges
 {
-    if (_edges == edges) {
-        return;
-    }
-
-    _edges = edges;
-
-    self.nodesCount = [self calculateNodesCount];
-
-    [self addVertices];
-    [self addEdgeLines];
+    return [self.mutableEdges copy];
 }
 
 - (void)addEdge:(NSArray *)edge
 {
-    //делать внутреннюю mutable copy edges
-    _edges = [self.edges arrayByAddingObject:edge];
+    [self.mutableEdges addObject:edge];
 
-    //иногда нужно создавать vertex - иногда нет
-    //[self createVertice];
-    [self createEdgeLine];
+    [self createVerticesForEdge:edge];
+    [self createConnectionFroEdge:edge];
 }
 
 - (void)addEdges:(NSArray *)edges
 {
-
+    for (NSArray *edge in edges) {
+        [self addEdge:edge];
+    }
 }
 
 - (void)removeEdge:(NSArray *)edge
@@ -89,39 +83,37 @@
 
 }
 
-
-- (void)addEdgeLines
+- (void)createConnectionFroEdge:(NSArray *)edge
 {
-    for (NSUInteger i = 0; i < self.edges.count; i++) {
-        [self createEdgeLine];
+    SKShapeNode *connection = [SKShapeNode node];
+    connection.strokeColor = [UIColor redColor];
+    connection.fillColor = [UIColor redColor];
+    connection.lineWidth = 3.f;
+
+    [self addChild:connection];
+    self.connections[edge] = connection;
+}
+
+- (void)createVerticesForEdge:(NSArray *)edge
+{
+    [self createVertexIfNeeded:edge.firstObject];
+    [self createVertexIfNeeded:edge.lastObject];
+}
+
+- (void)createVertexIfNeeded:(NSNumber *)index
+{
+    if (self.vertices[index] == nil) {
+        [self createVertexWithIndex:index];
     }
 }
 
-- (void)createEdgeLine
+- (void)createVertexWithIndex:(NSNumber *)index
 {
-    SKShapeNode *edge = [SKShapeNode node];
-    [edge setStrokeColor:[UIColor redColor]];
-    [edge setFillColor:[UIColor redColor]];
-    [edge setLineWidth:1.f];
-    [self addChild:edge];
-    [self.lines addObject:edge];
-}
-
-- (void)addVertices
-{
-    for (NSUInteger i = 0; i < self.nodesCount; i ++) {
-        [self createVertice];
-    }
-}
-
-- (void)createVertice
-{
-    NSUInteger i = self.vertices.count;
-    SKShapeNode *circle = [self newCircleWithIndex:i];
+    SKShapeNode *circle = [self newCircleWithIndex:index.unsignedIntegerValue];
     circle.position = CGPointMake(arc4random() % (NSUInteger)self.size.width,
                                   arc4random() % (NSUInteger)self.size.height);
     [self addChild:circle];
-    [self.vertices addObject:circle];
+    self.vertices[index] = circle;
 }
 
 - (NSUInteger)calculateNodesCount
@@ -142,8 +134,10 @@
 
     NSUInteger n = self.vertices.count;
 
+    NSArray *vertices = self.vertices.allValues;
+
     for  (NSUInteger i = 0; i < n; i++) {
-        SKShapeNode *v = self.vertices[i];
+        SKShapeNode *v = vertices[i];
         SKSpriteNode *u;
 
         CGFloat vForceX = 0;
@@ -152,7 +146,7 @@
         for (NSUInteger j = 0; j < n; j++) {
             if (i == j) continue;
 
-            u = self.vertices[j];
+            u = vertices[j];
 
             double rsq = pow((v.position.x - u.position.x), 2) + pow((v.position.y - u.position.y), 2);
             vForceX += self.repulsion * (v.position.x - u.position.x) / rsq;
@@ -162,7 +156,7 @@
         for (NSUInteger j = 0; j < n; j++) {
             if(![self hasConnectedA:i toB:j]) continue;
 
-            u = self.vertices[j];
+            u = vertices[j];
 
             vForceX += self.attraction * (u.position.x - v.position.x);
             vForceY += self.attraction * (u.position.y - v.position.y);
@@ -176,25 +170,21 @@
         v.physicsBody.angularVelocity = 0;
     }
 
-    [self updateEdgeLines];
+    [self updateConnections];
 }
 
-- (void)updateEdgeLines
+- (void)updateConnections
 {
-    for (NSUInteger i = 0; i < self.edges.count; i++) {
-        // боюсь ошибиться, но здесь линии выхватываются не
-        // в нужно очередности, по факту линии нужно привязывать к edges индкесам
-        NSArray *edge = self.edges[i];
-        SKShapeNode *a = self.lines[i];
+    [self.connections enumerateKeysAndObjectsUsingBlock:^(NSArray *key, SKShapeNode *connection, BOOL *stop) {
         CGMutablePathRef pathToDraw = CGPathCreateMutable();
 
-        SKNode *na = self.vertices[[edge[0] unsignedIntegerValue]];
-        SKNode *nb = self.vertices[[edge[1] unsignedIntegerValue]];
+        SKNode *vertexA = self.vertices[key.firstObject];
+        SKNode *vertexB = self.vertices[key.lastObject];
 
-        CGPathMoveToPoint(pathToDraw, NULL, na.position.x, na.position.y);
-        CGPathAddLineToPoint(pathToDraw, NULL, nb.position.x, nb.position.y);
-        a.path = pathToDraw;
-    }
+        CGPathMoveToPoint(pathToDraw, NULL, vertexA.position.x, vertexA.position.y);
+        CGPathAddLineToPoint(pathToDraw, NULL, vertexB.position.x, vertexB.position.y);
+        connection.path = pathToDraw;
+    }];
 }
 
 - (BOOL)hasConnectedA:(NSUInteger)a toB:(NSUInteger)b

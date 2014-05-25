@@ -3,7 +3,7 @@
 
 @interface DLGraphScene ()
 
-@property (nonatomic, strong) NSMutableArray *vertices;
-@property (nonatomic, strong) NSMutableArray *lines;
+@property (nonatomic, strong) NSMutableDictionary *vertices;
+@property (nonatomic, strong) NSMutableDictionary *connections;
 
 @end

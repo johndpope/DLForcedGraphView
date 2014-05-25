@@ -3,6 +3,6 @@
 
 @interface DLGraphView : SKView
 
-@property (nonatomic, strong) DLGraphScene *scene;
+@property (nonatomic, strong, readonly) DLGraphScene *graphScene;
 
 @end
