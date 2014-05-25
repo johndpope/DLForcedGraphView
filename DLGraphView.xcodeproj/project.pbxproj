@@ -19,6 +19,7 @@
 		2EF5D95F1931CE350003045A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EF5D9471931CE350003045A /* UIKit.framework */; };
 		2EF5D9671931CE350003045A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2EF5D9651931CE350003045A /* InfoPlist.strings */; };
 		2EF5D9691931CE350003045A /* DLGraphViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF5D9681931CE350003045A /* DLGraphViewTests.m */; };
+		5ECDC19DB49C664837B181F7 /* DLGraphDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ECDCC65D631281B1E26B178 /* DLGraphDemoViewController.xib */; };
 		5ECDC4BD8A0852D002734202 /* DLGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDCDD9350EF5767B2F6345 /* DLGraphView.m */; };
 		5ECDC86E61659DCEB858020A /* DLGraphDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDC75D876ED86A9EBADFE8 /* DLGraphDemoViewController.m */; };
 		5ECDC9C166B79BF6CB6F5F72 /* DLGraphScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDC4CC29F7899360E09D4B /* DLGraphScene.m */; };
@@ -56,6 +57,7 @@
 		5ECDC4CC29F7899360E09D4B /* DLGraphScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLGraphScene.m; sourceTree = "<group>"; };
 		5ECDC59C00E7D4C286C3905F /* DLGraphScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLGraphScene.h; sourceTree = "<group>"; };
 		5ECDC75D876ED86A9EBADFE8 /* DLGraphDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLGraphDemoViewController.m; sourceTree = "<group>"; };
+		5ECDCC65D631281B1E26B178 /* DLGraphDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DLGraphDemoViewController.xib; sourceTree = "<group>"; };
 		5ECDCD3C07DC92F37A92B9CF /* DLGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLGraphView.h; sourceTree = "<group>"; };
 		5ECDCDD9350EF5767B2F6345 /* DLGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLGraphView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +126,7 @@
 				2EF5D94A1931CE350003045A /* Supporting Files */,
 				5ECDC75D876ED86A9EBADFE8 /* DLGraphDemoViewController.m */,
 				5ECDC2A6C403040CF7B8E38C /* DLGraphDemoViewController.h */,
+				5ECDCC65D631281B1E26B178 /* DLGraphDemoViewController.xib */,
 			);
 			path = DLGraphView;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			files = (
 				2EF5D94E1931CE350003045A /* InfoPlist.strings in Resources */,
 				2EF5D9561931CE350003045A /* Images.xcassets in Resources */,
+				5ECDC19DB49C664837B181F7 /* DLGraphDemoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

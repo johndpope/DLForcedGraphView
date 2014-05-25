@@ -3,15 +3,12 @@
 
 @interface DLGraphDemoViewController ()
 
+- (IBAction)attractionDidChange:(UISlider *)sender;
+- (IBAction)repulsionDidChange:(UISlider *)sender;
+
 @end
 
 @implementation DLGraphDemoViewController
-
-- (void)loadView
-{
-    self.view = [[DLGraphView alloc] initWithFrame:CGRectZero];
-    self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-}
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -46,4 +43,12 @@
     return (DLGraphView *)self.view;
 }
 
+- (IBAction)attractionDidChange:(UISlider *)sender {
+    self.graphView.graphScene.attraction = sender.value;
+
+}
+
+- (IBAction)repulsionDidChange:(UISlider *)sender {
+    self.graphView.graphScene.repulsion = sender.value;
+}
 @end
