@@ -36,6 +36,9 @@
     ];
 
     [scene addEdges:edges];
+
+    [scene performSelector:@selector(removeEdge:) withObject:@[@0,@1] afterDelay:4.0];
+    [scene performSelector:@selector(addEdge:) withObject:@[@0,@1] afterDelay:7.0];
 }
 
 - (void)showDebugInfo

@@ -90,7 +90,7 @@
             vForceY += self.attraction * (u.position.y - v.position.y);
         }
 
-        v.physicsBody.linearDamping = 0.85;
+        v.physicsBody.linearDamping = 0.95;
         v.physicsBody.velocity = CGVectorMake((v.physicsBody.velocity.dx + vForceX),
                                               (v.physicsBody.velocity.dy + vForceY));
 
@@ -131,12 +131,18 @@
 
 - (void)removeEdge:(NSArray *)edge
 {
+    [self.mutableEdges removeObject:edge];
 
+    SKShapeNode *connection = self.connections[edge];
+    [connection removeFromParent];
+    [self.connections removeObjectForKey:edge];
 }
 
 - (void)removeEdges:(NSArray *)edges
 {
-
+    for (NSArray *edge in edges) {
+        [self removeEdge:edge];
+    }
 }
 
 #pragma mark - Private
