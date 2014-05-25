@@ -249,7 +249,17 @@
     self.touchedNode.position = positionInScene;
 }
 
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self endTouch];
+}
+
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self endTouch];
+}
+
+- (void)endTouch
 {
     self.touchedNode = nil;
 }
