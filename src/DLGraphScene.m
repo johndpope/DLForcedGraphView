@@ -14,10 +14,14 @@
 
 @implementation DLGraphScene
 
-- (instancetype)init
+- (instancetype)initWithSize:(CGSize)size
 {
-    if (self = [super init]) {
+    if (self = [super initWithSize:size]) {
+        _lines = [NSMutableArray array];
+        _vertices = [NSMutableArray array];
 
+        _repulsion = 800.f;
+        _attraction = 0.1f;
     }
 
     return self;
@@ -30,21 +34,20 @@
         [self createSceneContents];
         self.contentCreated = YES;
     }
-
-    self.repulsion = 800.f;
-    self.attraction = 0.1f;
-
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self addEdge:@[@0, @4]];
-    });
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self addEdge:@[@0, @4]];
+//    });
 }
 
 - (void)createSceneContents
 {
     self.backgroundColor = [SKColor blueColor];
-    self.scaleMode = SKSceneScaleModeAspectFit;
-    self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
     self.physicsWorld.gravity = CGVectorMake(0,0);
+}
+
+- (void)didChangeSize:(CGSize)oldSize {
+    [super didChangeSize:oldSize];
+    self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
 }
 
 - (void)setEdges:(NSArray *)edges
@@ -89,8 +92,6 @@
 
 - (void)addEdgeLines
 {
-    self.lines = [NSMutableArray array];
-
     for (NSUInteger i = 0; i < self.edges.count; i++) {
         [self createEdgeLine];
     }
@@ -108,8 +109,6 @@
 
 - (void)addVertices
 {
-    self.vertices = [NSMutableArray arrayWithCapacity:self.nodesCount];
-
     for (NSUInteger i = 0; i < self.nodesCount; i ++) {
         [self createVertice];
     }
