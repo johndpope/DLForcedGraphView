@@ -145,7 +145,9 @@
 
 - (void)createVertexWithIndex:(NSNumber *)index
 {
-    SKShapeNode *circle = [self newCircleWithIndex:index.unsignedIntegerValue];
+    SKShapeNode *circle = [self createVertexNode];
+    [self.delegate configureVertex:circle atIndex:index.unsignedIntegerValue];
+
     circle.position = CGPointMake(arc4random() % (NSUInteger)self.size.width,
                                   arc4random() % (NSUInteger)self.size.height);
     [self addChild:circle];
@@ -198,17 +200,11 @@
 
 - (BOOL)hasConnectedA:(NSUInteger)a toB:(NSUInteger)b
 {
-    for (NSArray *edge in self.edges) {
-        NSUInteger i = [edge[0] unsignedIntegerValue];
-        NSUInteger j = [edge[1] unsignedIntegerValue];
-        if ((a == i && b == j) || (a == j && b == i)) {
-            return YES;
-        }
-    }
-    return NO;
+    return  [self.edges containsObject:@[@(a), @(b)]] ||
+            [self.edges containsObject:@[@(b), @(a)]];
 }
 
-- (SKShapeNode *)newCircleWithIndex:(NSInteger)index {
+- (SKShapeNode *)createVertexNode {
 #warning shape node ликуют - проверить.
     SKShapeNode *node = [SKShapeNode node];
     node.zPosition = 10;
@@ -216,12 +212,7 @@
     node.name = @"circle";
     CGFloat diameter = 40;
     [node setPath:CGPathCreateWithEllipseInRect(CGRectMake(-diameter /2, -diameter / 2, diameter, diameter), nil)];
-    node.strokeColor = node.fillColor = [SKColor greenColor];
     node.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:diameter / 2];
-
-    SKLabelNode *label = [SKLabelNode node];
-    label.text = [@(index) stringValue];
-    [node addChild:label];
 
     return node;
 }

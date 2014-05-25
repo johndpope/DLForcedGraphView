@@ -1,7 +1,7 @@
 #import "DLGraphDemoViewController.h"
 #import "DLGraphView.h"
 
-@interface DLGraphDemoViewController ()
+@interface DLGraphDemoViewController () <DLGraphSceneDelegate>
 
 - (IBAction)attractionDidChange:(UISlider *)sender;
 - (IBAction)repulsionDidChange:(UISlider *)sender;
@@ -17,6 +17,7 @@
     //TODO: дать возможность делать это в viewDidLoad
     [self showDebugInfo];
     DLGraphScene *scene = self.graphView.graphScene;
+    scene.delegate = self;
 
     NSArray *edges =  @[
         @[@0, @1],
@@ -51,4 +52,16 @@
 - (IBAction)repulsionDidChange:(UISlider *)sender {
     self.graphView.graphScene.repulsion = sender.value;
 }
+
+#pragma mark - DLGraphSceneDelegate
+
+- (void)configureVertex:(SKShapeNode *)vertex atIndex:(NSUInteger)index
+{
+    vertex.strokeColor = vertex.fillColor = [SKColor greenColor];
+    SKLabelNode *label = [SKLabelNode node];
+    label.text = [@(index) stringValue];
+    [vertex addChild:label];
+}
+
+
 @end
