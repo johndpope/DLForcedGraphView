@@ -215,7 +215,8 @@
     node.physicsBody.allowsRotation = NO;
     node.name = @"circle";
     CGFloat diameter = 40;
-    [node setPath:CGPathCreateWithEllipseInRect(CGRectMake(-diameter /2, -diameter / 2, diameter, diameter), nil)];
+    CGRect circleRect = CGRectMake(- diameter / 2, - diameter / 2, diameter, diameter);
+    node.path =CGPathCreateWithEllipseInRect(circleRect, nil);
     node.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:diameter / 2];
 
     return node;
