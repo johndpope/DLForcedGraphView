@@ -1,5 +1,5 @@
 #import "DLGraphDemoViewController.h"
-#import "DLGraphView.h"
+#import "DLForcedGraphView.h"
 #import "DLEdge.h"
 
 @interface DLGraphDemoViewController () <DLGraphSceneDelegate>
@@ -11,12 +11,11 @@
 
 @implementation DLGraphDemoViewController
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewDidLoad
 {
-    [super viewDidAppear:animated];
-
-    //TODO: дать возможность делать это в viewDidLoad
+    [super viewDidLoad];
     [self showDebugInfo];
+
     DLGraphScene *scene = self.graphView.graphScene;
     scene.delegate = self;
 
@@ -24,7 +23,12 @@
         DLMakeEdge(0, 1),
         DLMakeEdge(1, 2),
         DLMakeEdge(2, 3),
-        DLMakeEdge(3, 0)
+        DLMakeEdge(3, 0),
+        DLMakeEdge(3, 4),
+        DLMakeEdge(4, 5),
+        DLMakeEdge(4, 6),
+        DLMakeEdge(4, 7),
+        DLMakeEdge(4, 8),
     ];
 
     [scene addEdges:edges];
@@ -41,17 +45,18 @@
     self.graphView.showsPhysics = YES;
 }
 
-- (DLGraphView *)graphView
+- (DLForcedGraphView *)graphView
 {
-    return (DLGraphView *)self.view;
+    return (DLForcedGraphView *)self.view;
 }
 
-- (IBAction)attractionDidChange:(UISlider *)sender {
+- (IBAction)attractionDidChange:(UISlider *)sender
+{
     self.graphView.graphScene.attraction = sender.value;
-
 }
 
-- (IBAction)repulsionDidChange:(UISlider *)sender {
+- (IBAction)repulsionDidChange:(UISlider *)sender
+{
     self.graphView.graphScene.repulsion = sender.value;
 }
 

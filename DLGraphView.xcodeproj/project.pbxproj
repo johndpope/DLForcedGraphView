@@ -21,7 +21,7 @@
 		2EF5D97219325F890003045A /* DLEdgeSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDCF0FD49B28E3DF73CC77 /* DLEdgeSpec.m */; };
 		2EF5D97319325F890003045A /* DLGraphSceneSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDCB4A92B576632F75DC1C /* DLGraphSceneSpec.m */; };
 		5ECDC19DB49C664837B181F7 /* DLGraphDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ECDCC65D631281B1E26B178 /* DLGraphDemoViewController.xib */; };
-		5ECDC4BD8A0852D002734202 /* DLGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDCDD9350EF5767B2F6345 /* DLGraphView.m */; };
+		5ECDC4BD8A0852D002734202 /* DLForcedGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDCDD9350EF5767B2F6345 /* DLForcedGraphView.m */; };
 		5ECDC86E61659DCEB858020A /* DLGraphDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDC75D876ED86A9EBADFE8 /* DLGraphDemoViewController.m */; };
 		5ECDC894C8874E9A07080E3C /* DLEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDC386434A911F7FFEE129 /* DLEdge.m */; };
 		5ECDC9C166B79BF6CB6F5F72 /* DLGraphScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDC4CC29F7899360E09D4B /* DLGraphScene.m */; };
@@ -63,8 +63,8 @@
 		5ECDC89B28D4D8AE1B504CEA /* DLEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLEdge.h; sourceTree = "<group>"; };
 		5ECDCB4A92B576632F75DC1C /* DLGraphSceneSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLGraphSceneSpec.m; sourceTree = "<group>"; };
 		5ECDCC65D631281B1E26B178 /* DLGraphDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DLGraphDemoViewController.xib; sourceTree = "<group>"; };
-		5ECDCD3C07DC92F37A92B9CF /* DLGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLGraphView.h; sourceTree = "<group>"; };
-		5ECDCDD9350EF5767B2F6345 /* DLGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLGraphView.m; sourceTree = "<group>"; };
+		5ECDCD3C07DC92F37A92B9CF /* DLForcedGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLForcedGraphView.h; sourceTree = "<group>"; };
+		5ECDCDD9350EF5767B2F6345 /* DLForcedGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLForcedGraphView.m; sourceTree = "<group>"; };
 		5ECDCF0FD49B28E3DF73CC77 /* DLEdgeSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLEdgeSpec.m; sourceTree = "<group>"; };
 		B1F7E87C4B204ABA9AE88690 /* Pods-DLGraphViewTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DLGraphViewTests.xcconfig"; path = "Pods/Pods-DLGraphViewTests.xcconfig"; sourceTree = "<group>"; };
 		E7C4BB9FCD114BC3B9C7013D /* libPods-DLGraphViewTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DLGraphViewTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,8 +186,8 @@
 				5ECDC59C00E7D4C286C3905F /* DLGraphScene.h */,
 				5ECDC4CC29F7899360E09D4B /* DLGraphScene.m */,
 				5ECDC0DE5E6A94C9D03E8770 /* DLGraphScene+Private.h */,
-				5ECDCD3C07DC92F37A92B9CF /* DLGraphView.h */,
-				5ECDCDD9350EF5767B2F6345 /* DLGraphView.m */,
+				5ECDCD3C07DC92F37A92B9CF /* DLForcedGraphView.h */,
+				5ECDCDD9350EF5767B2F6345 /* DLForcedGraphView.m */,
 				5ECDC386434A911F7FFEE129 /* DLEdge.m */,
 				5ECDC89B28D4D8AE1B504CEA /* DLEdge.h */,
 			);
@@ -330,7 +330,7 @@
 				2EF5D9501931CE350003045A /* main.m in Sources */,
 				5ECDC86E61659DCEB858020A /* DLGraphDemoViewController.m in Sources */,
 				5ECDC9C166B79BF6CB6F5F72 /* DLGraphScene.m in Sources */,
-				5ECDC4BD8A0852D002734202 /* DLGraphView.m in Sources */,
+				5ECDC4BD8A0852D002734202 /* DLForcedGraphView.m in Sources */,
 				5ECDC894C8874E9A07080E3C /* DLEdge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

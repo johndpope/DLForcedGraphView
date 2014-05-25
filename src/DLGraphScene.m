@@ -203,23 +203,25 @@
         CGPathMoveToPoint(pathToDraw, NULL, vertexA.position.x, vertexA.position.y);
         CGPathAddLineToPoint(pathToDraw, NULL, vertexB.position.x, vertexB.position.y);
         connection.path = pathToDraw;
+
+        CGPathRelease(pathToDraw);
     }];
 }
 
 - (BOOL)hasConnectedA:(NSUInteger)a toB:(NSUInteger)b
 {
-    return  [self.edges containsObject:DLMakeEdge(a, b)];
+    return [self.edges containsObject:DLMakeEdge(a, b)];
 }
 
 - (SKShapeNode *)createVertexNode {
-#warning shape node ликуют - проверить.
+    //TODO: fix SKShapeNode leak somehow
     SKShapeNode *node = [SKShapeNode node];
     node.zPosition = 10;
     node.physicsBody.allowsRotation = NO;
     node.name = @"circle";
     CGFloat diameter = 40;
     CGRect circleRect = CGRectMake(- diameter / 2, - diameter / 2, diameter, diameter);
-    node.path =CGPathCreateWithEllipseInRect(circleRect, nil);
+    node.path = CGPathCreateWithEllipseInRect(circleRect, nil);
     node.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:diameter / 2];
 
     return node;

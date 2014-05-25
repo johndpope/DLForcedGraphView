@@ -1,6 +1,6 @@
 //
 //  DLAppDelegate.h
-//  DLGraphView
+//  DLForcedGraphView
 //
 //  Created by Dzianis Lebedzeu on 5/25/14.
 //  Copyright (c) 2014 Home. All rights reserved.

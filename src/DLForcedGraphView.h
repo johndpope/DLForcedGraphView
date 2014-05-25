@@ -1,7 +1,7 @@
 #import "DLGraphScene.h"
 
 
-@interface DLGraphView : SKView
+@interface DLForcedGraphView : SKView
 
 @property (nonatomic, strong, readonly) DLGraphScene *graphScene;
 

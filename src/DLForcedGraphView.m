@@ -1,12 +1,12 @@
-#import "DLGraphView.h"
+#import "DLForcedGraphView.h"
 
-@interface DLGraphView ()
+@interface DLForcedGraphView ()
 
 @property (nonatomic, strong, readwrite) DLGraphScene *graphScene;
 
 @end
 
-@implementation DLGraphView
+@implementation DLForcedGraphView
 
 - (void)didMoveToSuperview
 {
