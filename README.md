@@ -5,7 +5,7 @@ Objective-C implementation of [forced graph](http://en.wikipedia.org/wiki/Force-
 
 Demo
 -----------------
-![demo](https://github.com/garnett/DLForcedGraphView/blob/master/img/demo.gif)
+![demo](https://raw.githubusercontent.com/garnett/DLForcedGraphView/master/img/demo.gif)
 
 Installation
 -----------------
