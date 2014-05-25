@@ -19,13 +19,20 @@
     DLGraphScene *scene = self.graphView.graphScene;
     scene.delegate = self;
 
-    NSArray *edges =  @[
+//    NSArray *edges =  @[
+//        @[@0, @1],
+//        @[@1, @2],
+//        @[@2, @3],
+//        @[@3, @4],
+//        @[@4, @5],
+//        @[@5, @0]
+//    ];
+
+    NSArray *edges = @[
         @[@0, @1],
         @[@1, @2],
         @[@2, @3],
-        @[@3, @4],
-        @[@4, @5],
-        @[@5, @0]
+        @[@0, @3]
     ];
 
     [scene addEdges:edges];

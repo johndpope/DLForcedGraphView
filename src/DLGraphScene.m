@@ -64,10 +64,8 @@
 
     NSUInteger n = self.vertices.count;
 
-    NSArray *vertices = self.vertices.allValues;
-
     for  (NSUInteger i = 0; i < n; i++) {
-        SKShapeNode *v = vertices[i];
+        SKShapeNode *v = self.vertices[@(i)];
         SKSpriteNode *u;
 
         CGFloat vForceX = 0;
@@ -76,7 +74,7 @@
         for (NSUInteger j = 0; j < n; j++) {
             if (i == j) continue;
 
-            u = vertices[j];
+            u = self.vertices[@(j)];
 
             double rsq = pow((v.position.x - u.position.x), 2) + pow((v.position.y - u.position.y), 2);
             vForceX += self.repulsion * (v.position.x - u.position.x) / rsq;
@@ -86,7 +84,7 @@
         for (NSUInteger j = 0; j < n; j++) {
             if(![self hasConnectedA:i toB:j]) continue;
 
-            u = vertices[j];
+            u = self.vertices[@(j)];;
 
             vForceX += self.attraction * (u.position.x - v.position.x);
             vForceY += self.attraction * (u.position.y - v.position.y);
