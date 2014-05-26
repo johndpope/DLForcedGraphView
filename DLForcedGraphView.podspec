@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "DLForcedGraphView"
-  s.version      = "0.1.0"
-  s.summary      = "Objective-C implementation of forced graph using SceneKit."
+  s.version      = "0.1.1"
+  s.summary      = "Objective-C implementation of forced graph using SpriteKit."
   s.homepage     = "https://github.com/garnett/DLForcedGraphView"
   s.screenshots  = "https://raw.githubusercontent.com/garnett/DLForcedGraphView/master/img/demo.gif"
   s.license      = { :type => "MIT", :file => "LICENSE" }
