@@ -1,7 +1,7 @@
 DLForcedGraphView
 =================
 
-Objective-C implementation of [forced graph](http://en.wikipedia.org/wiki/Force-directed_graph_drawing) using SpriteKit.
+iOS and OS X implementation of [forced graph](http://en.wikipedia.org/wiki/Force-directed_graph_drawing) using SpriteKit.
 
 Demo
 -----------------
