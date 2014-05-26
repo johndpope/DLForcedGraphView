@@ -33,6 +33,7 @@
 		2EF5D9B2193305070003045A /* DLForcedGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDCDD9350EF5767B2F6345 /* DLForcedGraphView.m */; };
 		2EF5D9B3193305070003045A /* DLEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDC386434A911F7FFEE129 /* DLEdge.m */; };
 		2EF5D9B51933058F0003045A /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EF5D9B41933058F0003045A /* SpriteKit.framework */; };
+		2EF5D9B719330A4A0003045A /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EF5D9B619330A4A0003045A /* SpriteKit.framework */; };
 		5ECDC19DB49C664837B181F7 /* DLGraphDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ECDCC65D631281B1E26B178 /* DLGraphDemoViewController.xib */; };
 		5ECDC4BD8A0852D002734202 /* DLForcedGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDCDD9350EF5767B2F6345 /* DLForcedGraphView.m */; };
 		5ECDC86E61659DCEB858020A /* DLGraphDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDC75D876ED86A9EBADFE8 /* DLGraphDemoViewController.m */; };
@@ -85,6 +86,7 @@
 		2EF5D9AD193304EA0003045A /* DLOSXDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLOSXDemoViewController.m; sourceTree = "<group>"; };
 		2EF5D9AE193304EA0003045A /* DLOSXDemoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLOSXDemoViewController.xib; sourceTree = "<group>"; };
 		2EF5D9B41933058F0003045A /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/SpriteKit.framework; sourceTree = DEVELOPER_DIR; };
+		2EF5D9B619330A4A0003045A /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		5ECDC0DE5E6A94C9D03E8770 /* DLGraphScene+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DLGraphScene+Private.h"; sourceTree = "<group>"; };
 		5ECDC2A6C403040CF7B8E38C /* DLGraphDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLGraphDemoViewController.h; sourceTree = "<group>"; };
 		5ECDC386434A911F7FFEE129 /* DLEdge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLEdge.m; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EF5D9B719330A4A0003045A /* SpriteKit.framework in Frameworks */,
 				2EF5D9461931CE350003045A /* CoreGraphics.framework in Frameworks */,
 				2EF5D9481931CE350003045A /* UIKit.framework in Frameworks */,
 				2EF5D9441931CE350003045A /* Foundation.framework in Frameworks */,
@@ -162,6 +165,7 @@
 		2EF5D9421931CE350003045A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2EF5D9B619330A4A0003045A /* SpriteKit.framework */,
 				2EF5D9B41933058F0003045A /* SpriteKit.framework */,
 				2EF5D9431931CE350003045A /* Foundation.framework */,
 				2EF5D9451931CE350003045A /* CoreGraphics.framework */,
