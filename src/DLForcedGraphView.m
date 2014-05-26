@@ -8,12 +8,21 @@
 
 @implementation DLForcedGraphView
 
+#if TARGET_OS_IPHONE
 - (void)didMoveToSuperview
 {
     [super didMoveToSuperview];
     self.scene.scaleMode = SKSceneScaleModeResizeFill;
     [self presentScene:self.scene];
 }
+#else
+- (void)viewDidMoveToSuperview
+{
+    [super viewDidMoveToSuperview];
+    self.scene.scaleMode = SKSceneScaleModeResizeFill;
+    [self presentScene:self.scene];
+}
+#endif
 
 - (DLGraphScene *)graphScene
 {

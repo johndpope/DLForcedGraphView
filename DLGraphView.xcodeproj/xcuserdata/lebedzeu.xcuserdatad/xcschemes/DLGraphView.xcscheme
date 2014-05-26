@@ -38,6 +38,16 @@
                ReferencedContainer = "container:DLGraphView.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2EF5D996193303480003045A"
+               BuildableName = "DLGraphViewOSXTests.xctest"
+               BlueprintName = "DLGraphViewOSXTests"
+               ReferencedContainer = "container:DLGraphView.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

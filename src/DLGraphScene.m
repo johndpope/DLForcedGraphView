@@ -165,8 +165,8 @@
 - (void)createConnectionForEdge:(DLEdge *)edge
 {
     SKShapeNode *connection = [SKShapeNode node];
-    connection.strokeColor = [UIColor redColor];
-    connection.fillColor = [UIColor redColor];
+    connection.strokeColor = [SKColor redColor];
+    connection.fillColor = [SKColor redColor];
     connection.lineWidth = 3.f;
 
     [self addChild:connection];
@@ -227,6 +227,9 @@
     return node;
 }
 
+
+#if TARGET_OS_IPHONE
+
 #pragma mark - Touch handling
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -268,5 +271,7 @@
 {
     self.touchedNode = nil;
 }
+
+#endif
 
 @end

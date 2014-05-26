@@ -20,6 +20,19 @@
 		2EF5D9671931CE350003045A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2EF5D9651931CE350003045A /* InfoPlist.strings */; };
 		2EF5D97219325F890003045A /* DLEdgeSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDCF0FD49B28E3DF73CC77 /* DLEdgeSpec.m */; };
 		2EF5D97319325F890003045A /* DLGraphSceneSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDCB4A92B576632F75DC1C /* DLGraphSceneSpec.m */; };
+		2EF5D97A193303480003045A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EF5D979193303480003045A /* Cocoa.framework */; };
+		2EF5D984193303480003045A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2EF5D982193303480003045A /* InfoPlist.strings */; };
+		2EF5D986193303480003045A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF5D985193303480003045A /* main.m */; };
+		2EF5D98A193303480003045A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2EF5D988193303480003045A /* Credits.rtf */; };
+		2EF5D98D193303480003045A /* DLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF5D98C193303480003045A /* DLAppDelegate.m */; };
+		2EF5D990193303480003045A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EF5D98E193303480003045A /* MainMenu.xib */; };
+		2EF5D992193303480003045A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EF5D991193303480003045A /* Images.xcassets */; };
+		2EF5D9AF193304EA0003045A /* DLOSXDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF5D9AD193304EA0003045A /* DLOSXDemoViewController.m */; };
+		2EF5D9B0193304EA0003045A /* DLOSXDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EF5D9AE193304EA0003045A /* DLOSXDemoViewController.xib */; };
+		2EF5D9B1193305070003045A /* DLGraphScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDC4CC29F7899360E09D4B /* DLGraphScene.m */; };
+		2EF5D9B2193305070003045A /* DLForcedGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDCDD9350EF5767B2F6345 /* DLForcedGraphView.m */; };
+		2EF5D9B3193305070003045A /* DLEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDC386434A911F7FFEE129 /* DLEdge.m */; };
+		2EF5D9B51933058F0003045A /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EF5D9B41933058F0003045A /* SpriteKit.framework */; };
 		5ECDC19DB49C664837B181F7 /* DLGraphDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ECDCC65D631281B1E26B178 /* DLGraphDemoViewController.xib */; };
 		5ECDC4BD8A0852D002734202 /* DLForcedGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDCDD9350EF5767B2F6345 /* DLForcedGraphView.m */; };
 		5ECDC86E61659DCEB858020A /* DLGraphDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDC75D876ED86A9EBADFE8 /* DLGraphDemoViewController.m */; };
@@ -54,6 +67,24 @@
 		2EF5D95C1931CE350003045A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2EF5D9641931CE350003045A /* DLGraphViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DLGraphViewTests-Info.plist"; sourceTree = "<group>"; };
 		2EF5D9661931CE350003045A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2EF5D978193303480003045A /* DLGraphViewOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DLGraphViewOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EF5D979193303480003045A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		2EF5D97C193303480003045A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		2EF5D97D193303480003045A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		2EF5D97E193303480003045A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2EF5D981193303480003045A /* DLGraphViewOSX-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DLGraphViewOSX-Info.plist"; sourceTree = "<group>"; };
+		2EF5D983193303480003045A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2EF5D985193303480003045A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2EF5D987193303480003045A /* DLGraphViewOSX-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DLGraphViewOSX-Prefix.pch"; sourceTree = "<group>"; };
+		2EF5D989193303480003045A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		2EF5D98B193303480003045A /* DLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLAppDelegate.h; sourceTree = "<group>"; };
+		2EF5D98C193303480003045A /* DLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLAppDelegate.m; sourceTree = "<group>"; };
+		2EF5D98F193303480003045A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		2EF5D991193303480003045A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2EF5D9AC193304EA0003045A /* DLOSXDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLOSXDemoViewController.h; sourceTree = "<group>"; };
+		2EF5D9AD193304EA0003045A /* DLOSXDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLOSXDemoViewController.m; sourceTree = "<group>"; };
+		2EF5D9AE193304EA0003045A /* DLOSXDemoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLOSXDemoViewController.xib; sourceTree = "<group>"; };
+		2EF5D9B41933058F0003045A /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/SpriteKit.framework; sourceTree = DEVELOPER_DIR; };
 		5ECDC0DE5E6A94C9D03E8770 /* DLGraphScene+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DLGraphScene+Private.h"; sourceTree = "<group>"; };
 		5ECDC2A6C403040CF7B8E38C /* DLGraphDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLGraphDemoViewController.h; sourceTree = "<group>"; };
 		5ECDC386434A911F7FFEE129 /* DLEdge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLEdge.m; sourceTree = "<group>"; };
@@ -92,6 +123,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2EF5D975193303480003045A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EF5D9B51933058F0003045A /* SpriteKit.framework in Frameworks */,
+				2EF5D97A193303480003045A /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -100,6 +140,7 @@
 			children = (
 				2EF5D9491931CE350003045A /* DLGraphView */,
 				2EF5D9621931CE350003045A /* DLGraphViewTests */,
+				2EF5D97F193303480003045A /* DLGraphViewOSX */,
 				2EF5D9421931CE350003045A /* Frameworks */,
 				2EF5D9411931CE350003045A /* Products */,
 				5ECDCD34D3DADB6D0417DECF /* src */,
@@ -113,6 +154,7 @@
 			children = (
 				2EF5D9401931CE350003045A /* DLGraphView.app */,
 				2EF5D95B1931CE350003045A /* DLGraphViewTests.xctest */,
+				2EF5D978193303480003045A /* DLGraphViewOSX.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,11 +162,14 @@
 		2EF5D9421931CE350003045A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2EF5D9B41933058F0003045A /* SpriteKit.framework */,
 				2EF5D9431931CE350003045A /* Foundation.framework */,
 				2EF5D9451931CE350003045A /* CoreGraphics.framework */,
 				2EF5D9471931CE350003045A /* UIKit.framework */,
 				2EF5D95C1931CE350003045A /* XCTest.framework */,
 				E7C4BB9FCD114BC3B9C7013D /* libPods-DLGraphViewTests.a */,
+				2EF5D979193303480003045A /* Cocoa.framework */,
+				2EF5D97B193303480003045A /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -167,6 +212,43 @@
 			children = (
 				2EF5D9641931CE350003045A /* DLGraphViewTests-Info.plist */,
 				2EF5D9651931CE350003045A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2EF5D97B193303480003045A /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2EF5D97C193303480003045A /* AppKit.framework */,
+				2EF5D97D193303480003045A /* CoreData.framework */,
+				2EF5D97E193303480003045A /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		2EF5D97F193303480003045A /* DLGraphViewOSX */ = {
+			isa = PBXGroup;
+			children = (
+				2EF5D98B193303480003045A /* DLAppDelegate.h */,
+				2EF5D98C193303480003045A /* DLAppDelegate.m */,
+				2EF5D98E193303480003045A /* MainMenu.xib */,
+				2EF5D991193303480003045A /* Images.xcassets */,
+				2EF5D980193303480003045A /* Supporting Files */,
+				2EF5D9AC193304EA0003045A /* DLOSXDemoViewController.h */,
+				2EF5D9AD193304EA0003045A /* DLOSXDemoViewController.m */,
+				2EF5D9AE193304EA0003045A /* DLOSXDemoViewController.xib */,
+			);
+			path = DLGraphViewOSX;
+			sourceTree = "<group>";
+		};
+		2EF5D980193303480003045A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2EF5D981193303480003045A /* DLGraphViewOSX-Info.plist */,
+				2EF5D982193303480003045A /* InfoPlist.strings */,
+				2EF5D985193303480003045A /* main.m */,
+				2EF5D987193303480003045A /* DLGraphViewOSX-Prefix.pch */,
+				2EF5D988193303480003045A /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -234,6 +316,23 @@
 			productReference = 2EF5D95B1931CE350003045A /* DLGraphViewTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		2EF5D977193303480003045A /* DLGraphViewOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EF5D9A8193303480003045A /* Build configuration list for PBXNativeTarget "DLGraphViewOSX" */;
+			buildPhases = (
+				2EF5D974193303480003045A /* Sources */,
+				2EF5D975193303480003045A /* Frameworks */,
+				2EF5D976193303480003045A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DLGraphViewOSX;
+			productName = DLGraphViewOSX;
+			productReference = 2EF5D978193303480003045A /* DLGraphViewOSX.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -255,6 +354,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 2EF5D9371931CE350003045A;
 			productRefGroup = 2EF5D9411931CE350003045A /* Products */;
@@ -263,6 +363,7 @@
 			targets = (
 				2EF5D93F1931CE350003045A /* DLGraphView */,
 				2EF5D95A1931CE350003045A /* DLGraphViewTests */,
+				2EF5D977193303480003045A /* DLGraphViewOSX */,
 			);
 		};
 /* End PBXProject section */
@@ -283,6 +384,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EF5D9671931CE350003045A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EF5D976193303480003045A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EF5D9B0193304EA0003045A /* DLOSXDemoViewController.xib in Resources */,
+				2EF5D984193303480003045A /* InfoPlist.strings in Resources */,
+				2EF5D992193303480003045A /* Images.xcassets in Resources */,
+				2EF5D98A193303480003045A /* Credits.rtf in Resources */,
+				2EF5D990193303480003045A /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +457,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2EF5D974193303480003045A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EF5D98D193303480003045A /* DLAppDelegate.m in Sources */,
+				2EF5D9B1193305070003045A /* DLGraphScene.m in Sources */,
+				2EF5D986193303480003045A /* main.m in Sources */,
+				2EF5D9AF193304EA0003045A /* DLOSXDemoViewController.m in Sources */,
+				2EF5D9B3193305070003045A /* DLEdge.m in Sources */,
+				2EF5D9B2193305070003045A /* DLForcedGraphView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -369,6 +495,30 @@
 				2EF5D9661931CE350003045A /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2EF5D982193303480003045A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2EF5D983193303480003045A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2EF5D988193303480003045A /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2EF5D989193303480003045A /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		2EF5D98E193303480003045A /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2EF5D98F193303480003045A /* Base */,
+			);
+			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -518,6 +668,51 @@
 			};
 			name = Release;
 		};
+		2EF5D9A4193303480003045A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DLGraphViewOSX/DLGraphViewOSX-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DLGraphViewOSX/DLGraphViewOSX-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2EF5D9A5193303480003045A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DLGraphViewOSX/DLGraphViewOSX-Prefix.pch";
+				INFOPLIST_FILE = "DLGraphViewOSX/DLGraphViewOSX-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -547,6 +742,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		2EF5D9A8193303480003045A /* Build configuration list for PBXNativeTarget "DLGraphViewOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EF5D9A4193303480003045A /* Debug */,
+				2EF5D9A5193303480003045A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
