@@ -9,7 +9,7 @@ Demo
 
 Installation
 -----------------
-Pod is coming soon.
+```pod 'DLForcedGraphView', '~> 0.1'```
 
 Usage
 -----------------
